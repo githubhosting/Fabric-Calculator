@@ -1,32 +1,22 @@
 import streamlit as st
+import math
 
 st.set_page_config(page_title="Fabric Calculator", page_icon="")
 
 st.title("Fabric Calculator")
 
-st.write(
-    "This is a AI based meal planner that uses a persons information. The planner can be used to find a meal plan that satisfies the user's calorie and macronutrient requirements.")
+width = st.number_input("Enter the Window Width :", step=1)
+height = st.number_input("Enter the Window Height :", step=1)
+panel=math.floor(width/20)
+mam=round((height+10)/39+0.5,1)
+shm=round((height+12)/39+0.5,1)
+st.subheader(f"No of Panels : {panel}")
+st.subheader(f"Main Material : {mam}")
+st.subheader(f"Shear Material : {shm}")
 
-st.write("Enter your information:")
-name = st.text_input("Enter your name")
-age = st.number_input("Enter your age", step=1)
-weight = st.number_input("Enter your weight (kg)")
-height = st.number_input("Enter your height (cm)")
-gender = st.radio("Choose your gender:", ["Male", "Female"])
-st.subheader(f"Your daily intake needs to have:  calories")
-
-if 'clicked' not in st.session_state:
-    st.session_state.clicked = False
-
-
-def click_button():
-    st.session_state.clicked = True
-
-
-st.button("Create a Basket", on_click=click_button)
-if st.session_state.clicked:
-    st.write("You clicked the button")
-    st.session_state.clicked = False
+st.write(" ")
+st.subheader(f"Total Main Material : {panel*mam}")
+st.subheader(f"Total Shear Material : {panel*shm}")
 
 hide_streamlit_style = """
                     <style>
