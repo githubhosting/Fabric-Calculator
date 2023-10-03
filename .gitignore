@@ -64,10 +64,6 @@ node_modules/
 # Coverage directory used by tools like istanbul
 coverage/
 
-########################################################################
-# Streamlit
-########################################################################
-.streamlit/
 lib/streamlit/static
 streamlit-storage
 
