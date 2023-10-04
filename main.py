@@ -4,7 +4,7 @@ import math
 st.set_page_config(page_title="Fabric Calculator", page_icon="📏")
 
 st.title("Fabric Calculator")
-input_type = st.radio("Select Input Type", ("Slider", "Number"), horizontal=True)
+input_type = st.radio("Select Input Type", ("Number", "Slider"), horizontal=True)
 
 if input_type == "Slider":
     width = st.slider("Enter the Window Width :", min_value=1, max_value=100, step=1)
