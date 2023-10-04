@@ -12,13 +12,6 @@ mam = f"{((height + 10) / 39 + 0.5):.1f}"
 shm = f"{((height + 12) / 39 + 0.5):.1f}"
 total_mam = f"{(panel * ((height + 10) / 39 + 0.5)):.1f}"
 total_shm = f"{(panel * ((height + 12) / 39 + 0.5)):.1f}"
-hide_dataframe_row_index = """
-         <style>
-         .row_heading.level0 {display:none}
-         .blank {display:none}
-         </style>
-         """
-st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 st.subheader("Calculated Values:")
 df = pd.DataFrame(
     {'Calculated Values': ['No of Panels', 'Main Material', 'Shear Material'], 'Values': [panel, mam, shm]})
