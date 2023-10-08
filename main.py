@@ -1,6 +1,5 @@
 import streamlit as st
 import math
-import streamlit_authenticator as stauth
 import yaml
 from streamlit_authenticator import Authenticate
 from yaml.loader import SafeLoader
