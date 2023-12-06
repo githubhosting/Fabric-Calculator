@@ -20,26 +20,69 @@ authenticator = Authenticate(
 name, authentication_status, username = authenticator.login('Login', 'main')
 
 
-def home():
-    st.title("Fabric Calculator")
-    # input_type = st.radio("Select Input Type", ("Number", "Slider"), horizontal=True)
-    #
-    # if input_type == "Slider":
-    #     width = st.slider("Enter the Window Width :", min_value=1, max_value=100, step=1)
-    #     height = st.slider("Enter the Window Height :", min_value=1, max_value=100, step=1)
-    # else:
-    width = st.number_input("Enter the Window Width :", min_value=1, step=1)
-    height = st.number_input("Enter the Window Height :", min_value=1, step=1)
+def curtain(width, height):
+    # st.subheader("Curtain")
     panel = math.floor(width / 20)
     mam = (height + 10) / 39 + 0.5
     shm = (height + 12) / 39 + 0.5
-    st.subheader(f"No of Panels : {panel}")
-    st.subheader(f"Main Material : {mam:.1f}")
-    st.subheader(f"Shear Material : {shm:.1f}")
+    track = (width + 12) / 12
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader(f"No of Panels : {panel}")
+        st.subheader(f"Main Material : {mam:.1f}")
+        st.subheader(f"Shear Material : {shm:.1f}")
+    with col2:
+        st.subheader(f"Total Main Material : {panel * mam:.1f}")
+        st.subheader(f"Total Shear Material : {panel * shm:.1f}")
+        st.subheader(f"Track(In Ft) : {track:.1f}")
 
-    st.write(" ")
-    st.subheader(f"Total Main Material : {panel * mam:.1f}")
-    st.subheader(f"Total Shear Material : {panel * shm:.1f}")
+
+def roman_blind(width, height):
+    # st.subheader("Roman Blind")
+    roman_track = (width + 6) / 12
+    blind_stitching = (height + 10) * (width + 10) / 144
+    fabric_req = (height + 10) / 39
+    if width <= 48:
+        total_material_needed = fabric_req
+    else:
+        total_material_needed = fabric_req * 2
+    st.subheader(f"Roman Track(In Ft) : {roman_track:.2f}")
+    st.subheader(f"Blind Stitching(In Ft) : {blind_stitching:.2f}")
+    st.subheader(f"Fabric Required/Panel : {fabric_req:.1f}")
+    st.subheader(f"Total Material Needed : {total_material_needed:.1f}")
+
+
+def wallpaper(width, height):
+    # st.subheader("Wallpaper")
+    sq_ft = width * height / 144
+    no_of_rolls = math.ceil(sq_ft / 50)
+    st.subheader(f"SQ Ft : {sq_ft:.1f}")
+    st.subheader(f"No of Rolls : {no_of_rolls:.1f}")
+
+
+def custom_blinds(width, height):
+    # st.subheader("Custom Blinds")
+    numer = (width + 6) * (height + 12)
+    sq_ft = numer / 144
+    st.subheader(f"SQ Ft : {sq_ft:.2f}")
+
+
+def home():
+    st.title("Fabric Calculator")
+    width = st.number_input("Enter the Window Width :", min_value=1, step=1)
+    height = st.number_input("Enter the Window Height :", min_value=1, step=1)
+    tab1, tab2, tab3, tab4 = st.tabs(["Curtain", "Roman Blind", "Wallpaper", "Custom Blinds"])
+    with tab1:
+        curtain(width, height)
+
+    with tab2:
+        roman_blind(width, height)
+
+    with tab3:
+        wallpaper(width, height)
+
+    with tab4:
+        custom_blinds(width, height)
 
 
 if st.session_state["authentication_status"]:
