@@ -12,6 +12,10 @@ credentials:
       email: demo@gmail.com
       name: Demo User
       password: $2b$12$jfdjdJZHWoFuFFTCh03ZuOgbGUnaUYYBH9UnAzi8122njaJ96Hqwi
+    admin:
+      email: admin@admin.com
+      name: Admin User
+      password: $2b$12$GSBab/3Mxy1ylMD/izsY3e5Gjs8NXLs19ikqpVwlm.b3qkUzZQSLS
 
 cookie:
   expiry_days: 30

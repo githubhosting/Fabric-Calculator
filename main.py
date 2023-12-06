@@ -2,6 +2,7 @@ import streamlit as st
 import math
 import yaml
 from streamlit_authenticator import Authenticate
+import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
 
 st.set_page_config(page_title="Fabric Calculator", page_icon="📏")
@@ -68,6 +69,8 @@ def custom_blinds(width, height):
 
 
 def home():
+    # hashed_passwords = stauth.Hasher(['admin']).generate()
+    # st.write(hashed_passwords)
     st.title("Fabric Calculator")
     width = st.number_input("Enter the Window Width :", min_value=1, step=1)
     height = st.number_input("Enter the Window Height :", min_value=1, step=1)
