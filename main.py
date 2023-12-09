@@ -30,8 +30,8 @@ def curtain(width, height):
     col1, col2 = st.columns(2)
     with col1:
         st.subheader(f"No of Panels : {panel}")
-        st.subheader(f"Main Material per panel (in inches) : {mam:.1f}")
-        st.subheader(f"Shear Material per panel (in inches) : {shm:.1f}")
+        st.subheader(f"Main Material per panel (in meters) : {mam:.1f}")
+        st.subheader(f"Shear Material per panel (in meters) : {shm:.1f}")
     with col2:
         st.subheader(f"Total Main Material : {panel * mam:.1f}")
         st.subheader(f"Total Shear Material : {panel * shm:.1f}")
@@ -72,8 +72,8 @@ def home():
     # hashed_passwords = stauth.Hasher(['admin']).generate()
     # st.write(hashed_passwords)
     st.title("Fabric Calculator")
-    width = st.number_input("Enter the Window Width :", min_value=1, step=1)
-    height = st.number_input("Enter the Window Height :", min_value=1, step=1)
+    width = st.number_input("Enter the Window Width (in inches):", min_value=1, step=1)
+    height = st.number_input("Enter the Window Height (in inches):", min_value=1, step=1)
     tab1, tab2, tab3, tab4 = st.tabs(["Curtain", "Roman Blind", "Wallpaper", "Custom Blinds"])
     with tab1:
         curtain(width, height)
