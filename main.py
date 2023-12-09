@@ -39,7 +39,7 @@ def curtain(width, height):
 
 
 def roman_blind(width, height):
-    st.subheader("## Minimum order quantity is 15 sft ##")
+    st.subheader("## Minimum order quantity is 15 sft##")
     roman_track = (width + 6) / 12
     blind_stitching = (height + 10) * (width + 10) / 144
     fabric_req = (height + 10) / 39
@@ -62,7 +62,7 @@ def wallpaper(width, height):
 
 
 def custom_blinds(width, height):
-    st.subheader("## Minimum order quantity is 15 sft ##")
+    st.subheader("## Minimum order quantity is 15 sft##")
     numer = (width + 6) * (height + 12)
     sq_ft = numer / 144
     st.subheader(f"SQ Ft : {sq_ft:.1f}")
