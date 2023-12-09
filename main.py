@@ -30,8 +30,8 @@ def curtain(width, height):
     col1, col2 = st.columns(2)
     with col1:
         st.subheader(f"No of Panels : {panel}")
-        st.subheader(f"Main Material : {mam:.1f}")
-        st.subheader(f"Shear Material : {shm:.1f}")
+        st.subheader(f"Main Material per panel (in inches) : {mam:.1f}")
+        st.subheader(f"Shear Material per panel (in inches) : {shm:.1f}")
     with col2:
         st.subheader(f"Total Main Material : {panel * mam:.1f}")
         st.subheader(f"Total Shear Material : {panel * shm:.1f}")
@@ -39,7 +39,7 @@ def curtain(width, height):
 
 
 def roman_blind(width, height):
-    # st.subheader("Roman Blind")
+    st.subheader("Minimum order quantity is 15 sft")
     roman_track = (width + 6) / 12
     blind_stitching = (height + 10) * (width + 10) / 144
     fabric_req = (height + 10) / 39
@@ -47,8 +47,8 @@ def roman_blind(width, height):
         total_material_needed = fabric_req
     else:
         total_material_needed = fabric_req * 2
-    st.subheader(f"Roman Track(In Ft) : {roman_track:.2f}")
-    st.subheader(f"Blind Stitching(In Ft) : {blind_stitching:.2f}")
+    st.subheader(f"Roman Track(In Ft) : {roman_track:.1f}")
+    st.subheader(f"Blind Stitching(In Ft) : {blind_stitching:.1f}")
     st.subheader(f"Fabric Required/Panel : {fabric_req:.1f}")
     st.subheader(f"Total Material Needed : {total_material_needed:.1f}")
 
@@ -62,10 +62,10 @@ def wallpaper(width, height):
 
 
 def custom_blinds(width, height):
-    # st.subheader("Custom Blinds")
+    st.subheader("Minimum order quantity is 15 sft")
     numer = (width + 6) * (height + 12)
     sq_ft = numer / 144
-    st.subheader(f"SQ Ft : {sq_ft:.4f}")
+    st.subheader(f"SQ Ft : {sq_ft:.1f}")
 
 
 def home():
