@@ -58,7 +58,7 @@ def wallpaper(width, height):
     sq_ft = width * height / 144
     no_of_rolls = sq_ft / 50
     st.subheader(f"SQ Ft : {sq_ft:.1f}")
-    st.subheader(f"No of Rolls : {no_of_rolls:.3f}")
+    st.subheader(f"No of Rolls : {no_of_rolls:.4f}")
 
 
 def custom_blinds(width, height):
