@@ -56,16 +56,16 @@ def roman_blind(width, height):
 def wallpaper(width, height):
     # st.subheader("Wallpaper")
     sq_ft = width * height / 144
-    no_of_rolls = math.ceil(sq_ft / 50)
+    no_of_rolls = sq_ft / 50
     st.subheader(f"SQ Ft : {sq_ft:.1f}")
-    st.subheader(f"No of Rolls : {no_of_rolls:.1f}")
+    st.subheader(f"No of Rolls : {no_of_rolls:.3f}")
 
 
 def custom_blinds(width, height):
     # st.subheader("Custom Blinds")
     numer = (width + 6) * (height + 12)
     sq_ft = numer / 144
-    st.subheader(f"SQ Ft : {sq_ft:.2f}")
+    st.subheader(f"SQ Ft : {sq_ft:.4f}")
 
 
 def home():
