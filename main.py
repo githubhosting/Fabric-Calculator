@@ -23,10 +23,10 @@ name, authentication_status, username = authenticator.login('Login', 'main')
 
 def curtain(width, height):
     # st.subheader("Curtain")
-    panel = math.floor(width / 20)
-    mam = (height + 10) / 39 + 0.5
-    shm = (height + 12) / 39 + 0.5
-    track = (width + 12) / 12
+    panel = round(width/20)
+    mam = (height+10)/39+0.5
+    shm = (height+12)/39+0.5
+    track = (width+12)/12
     col1, col2 = st.columns(2)
     with col1:
         st.subheader(f"No of Panels : {panel}")
