@@ -56,7 +56,7 @@ def roman_blind(width, height):
 def wallpaper(width, height):
     # st.subheader("Wallpaper")
     sq_ft = width * height / 144
-    no_of_rolls = sq_ft / 50
+    no_of_rolls = sq_ft / 51
     st.subheader(f"SQ Ft : {sq_ft:.1f}")
     st.subheader(f"No of Rolls : {no_of_rolls:.4f}")
 
