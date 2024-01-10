@@ -1,9 +1,9 @@
 import streamlit as st
 import math
 import yaml
-from streamlit_authenticator import Authenticate
+# from streamlit_authenticator import Authenticate
 import streamlit_authenticator as stauth
-from yaml.loader import SafeLoader
+# from yaml.loader import SafeLoader
 
 st.set_page_config(page_title="Fabric Calculator", page_icon="📏")
 
