@@ -1,7 +1,7 @@
 import streamlit as st
 import math
 import pandas as pd
-from main import name, authentication_status, username, authenticator
+from Home import name, authentication_status, username, authenticator
 
 st.set_page_config(page_title="Fabric Calculator", page_icon="📏")
 
