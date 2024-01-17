@@ -73,8 +73,8 @@ def home():
     st.divider()
     st.image("https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png", width=200)
     st.title("")
-    # width = st.number_input("Enter the Window Width (in inches):", min_value=1, step=1)
-    # height = st.number_input("Enter the Window Height (in inches):", min_value=1, step=1)
+    width = st.number_input("Enter the Window Width (in inches):", min_value=1, step=1)
+    height = st.number_input("Enter the Window Height (in inches):", min_value=1, step=1)
     tab1, tab2, tab3, tab4 = st.tabs(["Curtain", "Roman Blind", "Wallpaper", "Custom Blinds"])
     with tab1:
         curtain(width, height)

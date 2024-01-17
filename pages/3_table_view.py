@@ -38,8 +38,8 @@ def calculate_custom_blinds(width, height):
 def table_component():
     st.title("Fabric Calculator Table view")
     st.sidebar.header('User Input:')
-    # width = st.sidebar.number_input("Enter the Window Width :", min_value=1, step=1)
-    # height = st.sidebar.number_input("Enter the Window Height :", min_value=1, step=1)
+    width = st.sidebar.number_input("Enter the Window Width :", min_value=1, step=1)
+    height = st.sidebar.number_input("Enter the Window Height :", min_value=1, step=1)
 
     col1, col2 = st.columns(2)
 
