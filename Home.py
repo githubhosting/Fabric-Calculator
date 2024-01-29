@@ -29,17 +29,17 @@ def curtain(width, height):
     track = (width + 12) / 12
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader(f"No of Panels : :red[{panel}]")
-        st.subheader(f"Main Material per panel (in meters) : :red[{mam:.1f}]")
-        st.subheader(f"Shear Material per panel (in meters) : :red[{shm:.1f}]")
+        st.subheader(f"No of Panels : :orange[{panel}]")
+        st.subheader(f"Main Material per panel (in meters) : :orange[{mam:.1f}]")
+        st.subheader(f"Shear Material per panel (in meters) : :orange[{shm:.1f}]")
     with col2:
-        st.subheader(f"Total Main Material : :red[{panel * mam:.1f}]")
-        st.subheader(f"Total Shear Material : :red[{panel * shm:.1f}]")
-        st.subheader(f"Track(In Ft) : :red[{track:.1f}]")
+        st.subheader(f"Total Main Material : :orange[{panel * mam:.1f}]")
+        st.subheader(f"Total Shear Material : :orange[{panel * shm:.1f}]")
+        st.subheader(f"Track(In Ft) : :orange[{track:.1f}]")
 
 
 def roman_blind(width, height):
-    st.subheader("_Minimum order quantity is 15 sft_", divider=True)
+    st.subheader("Minimum order quantity is 15 sft", divider="gray")
     roman_track = (width + 6) / 12
     blind_stitching = (height + 10) * (width + 10) / 144
     fabric_req = (height + 10) / 39
@@ -47,31 +47,31 @@ def roman_blind(width, height):
         total_material_needed = fabric_req
     else:
         total_material_needed = fabric_req * 2
-    st.subheader(f"Roman Track(In Ft) : :red[{roman_track:.1f}]")
-    st.subheader(f"Blind Stitching(In Ft) : :red[{blind_stitching:.1f}]")
-    st.subheader(f"Fabric Required/Panel : :red[{fabric_req:.1f}]")
-    st.subheader(f"Total Material Needed : :red[{total_material_needed:.1f}]")
+    st.subheader(f"Roman Track(In Ft) : :orange[{roman_track:.1f}]")
+    st.subheader(f"Blind Stitching(In Ft) : :orange[{blind_stitching:.1f}]")
+    st.subheader(f"Fabric Required/Panel : :orange[{fabric_req:.1f}]")
+    st.subheader(f"Total Material Needed : :orange[{total_material_needed:.1f}]")
 
 
 def wallpaper(width, height):
     # st.subheader("Wallpaper")
     sq_ft = width * height / 144
     no_of_rolls = math.ceil(sq_ft / 51)
-    st.subheader(f"SQ Ft : :red[{sq_ft:.1f}]")
-    st.subheader(f"No of Rolls : :red[{no_of_rolls:.1f}]")
+    st.subheader(f"SQ Ft : :orange[{sq_ft:.1f}]")
+    st.subheader(f"No of Rolls : :orange[{no_of_rolls:.1f}]")
 
 
 def custom_blinds(width, height):
-    st.subheader("_Minimum order quantity is 15 sft_", divider="blue")
+    st.subheader("Minimum order quantity is 15 sft", divider="gray")
     numer = (width + 6) * (height + 12)
     sq_ft = numer / 144
-    st.subheader(f"SQ Ft : :red[{sq_ft:.1f}]")
+    st.subheader(f"SQ Ft : :orange[{sq_ft:.1f}]")
 
 
 def home():
-    st.title("Fabric Calculator")
+    st.image("http://grandeurliving.co/images/logo.png", width=300)
     st.divider()
-    st.image("https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png", width=200)
+    st.subheader("Fabric Calculator",divider="gray")
     st.title("")
     width = st.number_input("Enter the Window Width (in inches):", min_value=1, step=1)
     height = st.number_input("Enter the Window Height (in inches):", min_value=1, step=1)
@@ -90,7 +90,7 @@ def home():
 
 
 if st.session_state["authentication_status"]:
-    st.write(f'Welcome {st.session_state["name"]} 👋')
+    # st.write(f'Welcome {st.session_state["name"]} 👋')
     home()
     st.title("")
     st.divider()
@@ -121,7 +121,9 @@ hide_streamlit_style = """
     	            img{
                         border-radius: 10px !important;
                     }
-                    .stNumberInput{
+                    .st-dd
+                    {
+                    color: #ecbd54 !important;
                     }
                     </style>
                     """
