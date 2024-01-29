@@ -69,7 +69,7 @@ def custom_blinds(width, height):
 
 
 def home():
-    st.image("grandeur_logo.png", width=300)
+    st.image("https://github.com/githubhosting/ds/assets/71520844/941dbaa4-9148-4b01-a089-0dd70c3857bb", width=300)
     st.divider()
     st.subheader("Fabric Calculator",divider="gray")
     st.title("")
@@ -118,9 +118,7 @@ hide_streamlit_style = """
                         padding: 15px;
                         top: 2px;
     	            }
-    	            img{
-                        border-radius: 10px !important;
-                    }
+    	            
                     .st-dd{
                         color: #ecbd54 !important;
                     }
